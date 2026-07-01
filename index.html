@@ -6,7 +6,6 @@
 <title>Operación Aguantar a Sofía</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -25,16 +24,13 @@ h1{
     font-size:3.5rem;
     line-height:1.15;
     padding:15px;
-    text-align:center;
 }
 
 @media (max-width:768px){
-
     h1{
         font-size:1.8rem;
         line-height:1.2;
     }
-
 }
 
 .subtitulo{
@@ -114,10 +110,6 @@ h1{
     border-radius:15px;
 }
 
-.card h3{
-    margin-bottom:10px;
-}
-
 #imagenesJulio{
     display:flex;
     justify-content:center;
@@ -133,35 +125,13 @@ h1{
     box-shadow:0 0 20px white;
 }
 
-button{
-    font-size:1.2rem;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-    margin-top:15px;
-}
-
-#incidente{
-    margin-top:20px;
-    font-size:1.4rem;
-}
-
-.emergencia{
-    animation:parpadeo 0.6s infinite;
-}
-
-@keyframes parpadeo{
-    0%{background:red;}
-    50%{background:black;}
-    100%{background:red;}
-}
-
 .confeti{
     position:fixed;
-    top:-50px;
-    font-size:35px;
+    top:-30px;
+    font-size:22px;
     animation:caer linear forwards;
+    pointer-events:none;
+    z-index:999;
 }
 
 @keyframes caer{
@@ -174,6 +144,36 @@ button{
     display:none;
     font-size:3rem;
     padding:50px;
+}
+
+.stickerFinal{
+    width:480px;
+    max-width:80%;
+    height:auto;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+.rgbFinal{
+    background:linear-gradient(
+        270deg,
+        red,
+        orange,
+        yellow,
+        lime,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size:1400% 1400%;
+    animation:rgbLento 100s ease infinite;
+}
+
+@keyframes rgbLento{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .titulo{
@@ -222,107 +222,54 @@ Fecha estimada de liberación:
 </div>
 
 <div class="panel">
-
 <div id="contador">
-
-<div class="tiempo">
-<div class="numero" id="dias">0</div>
-<div class="texto">DÍAS</div>
+    <div class="tiempo"><div class="numero" id="dias">0</div><div class="texto">DÍAS</div></div>
+    <div class="tiempo"><div class="numero" id="horas">0</div><div class="texto">HORAS</div></div>
+    <div class="tiempo"><div class="numero" id="minutos">0</div><div class="texto">MINUTOS</div></div>
+    <div class="tiempo"><div class="numero" id="segundos">0</div><div class="texto">SEGUNDOS</div></div>
 </div>
-
-<div class="tiempo">
-<div class="numero" id="horas">0</div>
-<div class="texto">HORAS</div>
-</div>
-
-<div class="tiempo">
-<div class="numero" id="minutos">0</div>
-<div class="texto">MINUTOS</div>
-</div>
-
-<div class="tiempo">
-<div class="numero" id="segundos">0</div>
-<div class="texto">SEGUNDOS</div>
-</div>
-
-</div>
-
 <div id="frase"></div>
-
 </div>
 
 <div class="panel">
-
 <h2>📊 PROGRESO DE SUPERVIVENCIA</h2>
-
 <div class="barra">
-<div id="progreso"></div>
+    <div id="progreso"></div>
 </div>
-
 <div id="porcentaje"></div>
-
 </div>
 
 <div class="panel">
-
 <div class="stats">
-
-<div class="card">
-<h3>📅 Días sobrevividos</h3>
-<div id="sobrevividos"></div>
+    <div class="card"><h3>📅 Días sobrevividos</h3><div id="sobrevividos"></div></div>
+    <div class="card"><h3>🎖️ Nivel de aguante</h3><div id="aguante"></div></div>
+    <div class="card"><h3>🧠 Estado mental</h3><div id="mental"></div></div>
+    <div class="card"><h3>🏆 Logro actual</h3><div id="logro"></div></div>
 </div>
-
-<div class="card">
-<h3>🎖️ Nivel de aguante</h3>
-<div id="aguante"></div>
-</div>
-
-<div class="card">
-<h3>🧠 Estado mental</h3>
-<div id="mental"></div>
-</div>
-
-<div class="card">
-<h3>🏆 Logro actual</h3>
-<div id="logro"></div>
-</div>
-
-</div>
-
-</div>
-
-<div class="panel" id="panelJulio" style="display:none;">
-
-<h2>🎵 JULIO YA ESTÁ AQUÍ 🎵</h2>
-
-<div id="imagenesJulio"></div>
-
 </div>
 
 </div>
 
 <div id="final">
-
+🎉🎉🎉<br>
+MISIÓN COMPLETADA!!<br>
 🎉🎉🎉<br><br>
+SE TERMINÓ EL SUFRIMIENTO,<br>
+HASTA ENCONTRAR AL PRÓXIMO INSOPORTABLE...<br>
+QUE POR DESGRACIA NUNCA FALTA🙂🙄😒<br>
+<img src="imagenes/rabialoco.png" class="stickerFinal">
+</div>
 
-MISIÓN COMPLETADA<br><br>
-
-SE TERMINÓ EL SUFRIMIENTO...<br><br>
-
-HASTA ENCONTRAR AL PRÓXIMO INSOPORTABLE,<br>
-QUE POR DESGRACIA NUNCA FALTA...<br><br>
-
-🎉🎉🎉
-
+<div class="panel" id="panelJulio" style="display:none;">
+<h2>🎵 JULIO YA ESTÁ AQUÍ 🎵</h2>
+<div id="imagenesJulio"></div>
 </div>
 
 <script>
-
 const inicio = new Date("2026-04-01");
-const fin = new Date("2026-07-10T00:00:00");
+const fin = new Date(2026,6,10,0,0,0);
 
 const frases = [
-
 "Un día menos.",
 "La paciencia es temporal. El sufrimiento es eterno.",
 "Ya queda menos que ayer.",
@@ -331,31 +278,20 @@ const frases = [
 "Resistencia psicológica operativa.",
 "Sobreviviste otro minuto.",
 "La victoria está cerca.",
-"Tu recompensa será la paz mental.",
-"Nivel de sufrimiento aceptable.",
-"Todo sea por el titulo.",
-"El contador sigue ganando."
+"Tu recompensa será la paz mental."
 ];
 
-const aguantes = [
-"ÉPICO",
-"LEGENDARIO",
-"INHUMANO",
-"CASI SOBRENATURAL",
-"ADMIRABLE"
-];
+const aguantes = ["ÉPICO","LEGENDARIO","INHUMANO","CASI SOBRENATURAL","ADMIRABLE"];
 
 const mentales = [
 "Funcionando por milagro",
 "Sorprendentemente estable",
 "Necesita vacaciones",
 "Operativo",
-"Daño psicológico moderado",
-"Funcionando a base de memes"
+"Daño psicológico moderado"
 ];
 
 const imagenes = {
-
 1:["imagenes/julio-1.webp","imagenes/julio-11.jfif","imagenes/julio-111.jfif"],
 2:["imagenes/julio-2.jfif","imagenes/julio-22.jfif","imagenes/julio-222.jpg"],
 3:["imagenes/julio-3.jfif","imagenes/julio-33.jfif","imagenes/julio-333.jfif"],
@@ -366,194 +302,134 @@ const imagenes = {
 8:["imagenes/julio-8.jfif","imagenes/julio-88.jfif","imagenes/julio-888.jfif"],
 9:["imagenes/julio-9.jfif","imagenes/julio-99.jfif","imagenes/julio-999.jfif"],
 10:["imagenes/julio-10.jpg","imagenes/julio-1010.jfif","imagenes/julio-101010.jfif"]
-
 };
 
 function actualizar(){
+    const ahora = new Date();
+    const diferencia = fin - ahora;
 
-const ahora = new Date();
-const diferencia = fin - ahora;
+    if(diferencia <= 0){
+        document.getElementById("contenido").style.display="none";
+        document.getElementById("final").style.display="block";
 
-if(diferencia <= 0){
+        document.body.style.background="";
+        document.body.classList.add("rgbFinal");
 
-document.getElementById("contenido").style.display="none";
-document.getElementById("final").style.display="block";
+        document.getElementById("panelJulio").style.display="block";
 
-for(let i=0;i<120;i++){
-crearConfeti();
-}
+        const contenedor = document.getElementById("imagenesJulio");
+        contenedor.innerHTML="";
 
-return;
-}
+        imagenes[10].forEach(img=>{
+            const imagen=document.createElement("img");
+            imagen.src=img;
+            contenedor.appendChild(imagen);
+        });
 
-const dias = Math.floor(diferencia / (1000*60*60*24));
-const horas = Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
-const minutos = Math.floor((diferencia%(1000*60*60))/(1000*60));
-const segundos = Math.floor((diferencia%(1000*60))/1000);
+        let lluvia=setInterval(crearConfeti,250);
 
-document.getElementById("dias").innerText=dias;
-document.getElementById("horas").innerText=horas;
-document.getElementById("minutos").innerText=minutos;
-document.getElementById("segundos").innerText=segundos;
+        setTimeout(()=>{
+            clearInterval(lluvia);
+        },8000);
 
-if(dias <= 7){
-document.body.classList.add("emergencia");
-}
+        return;
+    }
 
-const total = fin - inicio;
-const actual = ahora - inicio;
+    const dias=Math.floor(diferencia/(1000*60*60*24));
+    const horas=Math.floor((diferencia%(1000*60*60*24))/(1000*60*60));
+    const minutos=Math.floor((diferencia%(1000*60*60))/(1000*60));
+    const segundos=Math.floor((diferencia%(1000*60))/1000);
 
-let porcentaje = (actual/total)*100;
+    document.getElementById("dias").innerText=dias;
+    document.getElementById("horas").innerText=horas;
+    document.getElementById("minutos").innerText=minutos;
+    document.getElementById("segundos").innerText=segundos;
 
-porcentaje = Math.max(0,Math.min(100,porcentaje));
+    const total=fin-inicio;
+    const actual=ahora-inicio;
 
-document.getElementById("progreso").style.width=porcentaje+"%";
-document.getElementById("porcentaje").innerText=
-porcentaje.toFixed(1)+"% COMPLETADO";
+    let porcentaje=(actual/total)*100;
+    porcentaje=Math.max(0,Math.min(100,porcentaje));
 
-const sobrevividos = Math.floor(actual/(1000*60*60*24));
+    document.getElementById("progreso").style.width=porcentaje+"%";
 
-document.getElementById("sobrevividos").innerText=
-sobrevividos;;
+    let porcentajeMostrar=Math.floor(porcentaje*10)/10;
 
-const hoy = new Date();
+    document.getElementById("porcentaje").innerText=
+    porcentajeMostrar+"% COMPLETADO";
 
-let logro = "Recluta";
+    document.getElementById("sobrevividos").innerText=
+    Math.floor(actual/(1000*60*60*24));
 
-if(hoy >= new Date("2026-05-01")){
-    logro = "Sobreviviste abril";
-}
+    const hoy=new Date();
 
-if(hoy >= new Date("2026-06-01")){
-    logro = "Veterano de mayo";
-}
+    let logro="Recluta";
 
-if(hoy >= new Date("2026-07-01")){
-    logro = "Entraste en julio";
-}
+    if(hoy>=new Date("2026-05-01")) logro="Sobreviviste abril";
+    if(hoy>=new Date("2026-06-01")) logro="Veterano de mayo";
+    if(hoy>=new Date("2026-07-01")) logro="Entraste en julio";
+    if(hoy>=new Date("2026-07-08")) logro="La victoria es inevitable";
 
-if(hoy >= new Date("2026-07-08")){
-    logro = "La victoria es inevitable";
-}
-
-document.getElementById("logro").innerText = logro;
-
+    document.getElementById("logro").innerText=logro;
 }
 
 function fraseRandom(){
-document.getElementById("frase").innerText =
-frases[Math.floor(Math.random()*frases.length)];
+    document.getElementById("frase").innerText=
+    frases[Math.floor(Math.random()*frases.length)];
 
-document.getElementById("aguante").innerText =
-aguantes[Math.floor(Math.random()*aguantes.length)];
+    document.getElementById("aguante").innerText=
+    aguantes[Math.floor(Math.random()*aguantes.length)];
 
-document.getElementById("mental").innerText =
-mentales[Math.floor(Math.random()*mentales.length)];
+    document.getElementById("mental").innerText=
+    mentales[Math.floor(Math.random()*mentales.length)];
 }
 
 function cargarJulio(){
+    const hoy=new Date();
 
-const hoy = new Date();
+    if(hoy.getMonth()!==6) return;
 
-if(hoy.getMonth() !== 6){
-    return;
-}
+    document.getElementById("panelJulio").style.display="block";
 
-document.getElementById("panelJulio").style.display = "block";
+    const dia=hoy.getDate();
 
-const dia = hoy.getDate();
+    if(!imagenes[dia]) return;
 
-if(!imagenes[dia]) return;
+    const contenedor=document.getElementById("imagenesJulio");
+    contenedor.innerHTML="";
 
-const contenedor = document.getElementById("imagenesJulio");
-
-contenedor.innerHTML="";
-
-imagenes[dia].forEach(img=>{
-
-const imagen = document.createElement("img");
-imagen.src = img;
-
-contenedor.appendChild(imagen);
-
-});
-
+    imagenes[dia].forEach(img=>{
+        const imagen=document.createElement("img");
+        imagen.src=img;
+        contenedor.appendChild(imagen);
+    });
 }
 
 function crearConfeti(){
+    const emojis=["🎉","🎊","🥳"];
 
-const emojis=["🎉","🎊","🥳","😂","🍾"];
+    const c=document.createElement("div");
+    c.className="confeti";
+    c.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=(Math.random()*2+2)+"s";
+    c.style.opacity=(Math.random()*0.5+0.5);
 
-const c = document.createElement("div");
+    document.body.appendChild(c);
 
-c.className="confeti";
-
-c.innerHTML=
-emojis[Math.floor(Math.random()*emojis.length)];
-
-c.style.left=Math.random()*100+"vw";
-
-c.style.animationDuration=
-(Math.random()*4+3)+"s";
-
-document.body.appendChild(c);
-
-setTimeout(()=>c.remove(),7000);
-
+    setTimeout(()=>c.remove(),4000);
 }
 
-const fondos = [
-
-"linear-gradient(135deg,#1f2937,#374151,#111827)", // gris oscuro
-
-"linear-gradient(135deg,#0f172a,#1e293b,#334155)", // azul oscuro
-
-"linear-gradient(135deg,#3f3f46,#27272a,#18181b)", // negro
-
-"linear-gradient(135deg,#14532d,#166534,#15803d)", // verde
-
-"linear-gradient(135deg,#581c87,#7e22ce,#9333ea)", // violeta
-
-"linear-gradient(135deg,#991b1b,#dc2626,#f87171)", // rojo
-
-"linear-gradient(135deg,#7c2d12,#ea580c,#fb923c)", // naranja
-
-"linear-gradient(135deg,#854d0e,#ca8a04,#facc15)", // amarillo
-
-"linear-gradient(135deg,#164e63,#0891b2,#67e8f9)", // celeste
-
-"linear-gradient(135deg,#134e4a,#14b8a6,#5eead4)", // turquesa
-
-"linear-gradient(135deg,#312e81,#4f46e5,#818cf8)", // índigo
-
-"linear-gradient(135deg,#4c1d95,#8b5cf6,#c4b5fd)", // lavanda
-
-"linear-gradient(135deg,#881337,#e11d48,#fda4af)", // rosa
-
-"linear-gradient(135deg,#422006,#a16207,#fbbf24)", // dorado
-
-"linear-gradient(135deg,#052e16,#15803d,#86efac)", // verde brillante
-
-"linear-gradient(135deg,#172554,#2563eb,#93c5fd)", // azul brillante
-
-"linear-gradient(135deg,#450a0a,#b91c1c,#fca5a5)", // rojo intenso
-
-"linear-gradient(135deg,#1e1b4b,#7c3aed,#ddd6fe)", // púrpura
-
-"linear-gradient(135deg,#292524,#78716c,#d6d3d1)", // piedra
-
-"linear-gradient(135deg,#000000,#434343,#808080)",  // monocromático
-
-"linear-gradient(135deg,#ff0080,#ff8c00,#40e0d0)", // fiesta
-
-"linear-gradient(135deg,#00ff87,#60efff,#0061ff)", // gamer
-
-"linear-gradient(135deg,#f953c6,#b91d73,#6a0572)", // neón rosa
-
-"linear-gradient(135deg,#00c9ff,#92fe9d,#f9f871)", // verano
-
-"linear-gradient(135deg,#ff512f,#dd2476,#1fa2ff)" // caos absoluto
-
+const fondos=[
+"linear-gradient(135deg,#1f2937,#374151,#111827)",
+"linear-gradient(135deg,#0f172a,#1e293b,#334155)",
+"linear-gradient(135deg,#3f3f46,#27272a,#18181b)",
+"linear-gradient(135deg,#14532d,#166534,#15803d)",
+"linear-gradient(135deg,#581c87,#7e22ce,#9333ea)",
+"linear-gradient(135deg,#991b1b,#dc2626,#f87171)",
+"linear-gradient(135deg,#7c2d12,#ea580c,#fb923c)",
+"linear-gradient(135deg,#164e63,#0891b2,#67e8f9)",
+"linear-gradient(135deg,#134e4a,#14b8a6,#5eead4)"
 ];
 
 document.body.style.background =
@@ -564,7 +440,6 @@ fraseRandom();
 cargarJulio();
 
 setInterval(actualizar,1000);
-
 </script>
 
 </body>
