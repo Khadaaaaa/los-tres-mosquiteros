@@ -26,6 +26,15 @@ h1{
     padding:15px;
 }
 
+#panelJulio{
+    margin:30px auto;
+}
+
+#panelJulio h2{
+    margin-bottom:20px;
+    font-size:clamp(1.5rem,4vw,2.2rem);
+}
+
 @media (max-width:768px){
     h1{
         font-size:1.8rem;
@@ -135,23 +144,32 @@ h1{
 }
 
 @keyframes caer{
+    from{
+        transform:translateY(-60px) rotate(0deg);
+    }
+
     to{
-        transform:translateY(120vh) rotate(720deg);
+        transform:translateY(140vh) rotate(720deg);
     }
 }
 
 #final{
     display:none;
-    font-size:3rem;
-    padding:50px;
+    width:100%;
+    max-width:900px;
+    margin:0 auto;
+    padding:40px 20px;
+    text-align:center;
+    line-height:1.35;
+    font-size:clamp(1.8rem,5vw,3rem);
 }
 
 .stickerFinal{
+    display:block;
     width:480px;
     max-width:80%;
     height:auto;
-    margin-top:15px;
-    margin-bottom:20px;
+    margin:20px auto;
 }
 
 .rgbFinal{
@@ -417,7 +435,9 @@ function crearConfeti(){
 
     document.body.appendChild(c);
 
-    setTimeout(()=>c.remove(),4000);
+    setTimeout(()=>{
+    c.remove();
+},3000);
 }
 
 const fondos=[
