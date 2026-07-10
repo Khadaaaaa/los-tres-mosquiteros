@@ -134,6 +134,55 @@ h1{
     box-shadow:0 0 20px white;
 }
 
+#fotoRecuerdo{
+
+display:block;
+
+margin:25px auto;
+
+width:100%;
+max-width:600px;
+
+border-radius:15px;
+
+box-shadow:0 0 20px white;
+
+animation:aparecer .4s;
+
+}
+
+#mensajeRecuerdo{
+
+margin-top:20px;
+
+font-size:1.5rem;
+
+line-height:1.5;
+
+animation:aparecer .4s;
+
+}
+
+@keyframes aparecer{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
 .confeti{
     position:fixed;
     top:-30px;
@@ -280,9 +329,26 @@ QUE POR DESGRACIA NUNCA FALTA <br>
 <img src="imagenes/rabialoco.png" class="stickerFinal">
 </div>
 
-<div class="panel" id="panelJulio" style="display:none;">
-<h2>🎵 JULIO YA ESTÁ AQUÍ 🎵</h2>
-<div id="imagenesJulio"></div>
+<div class="panel" id="panelRecuerdos" style="display:none;">
+
+<h2>📸 Los buenos y malos momentos quedan siempre en fotos.</h2>
+
+<p style="margin:15px 0;font-size:1.2rem;">
+Ver bajo su propio riesgo.
+</p>
+
+<button id="btnFoto" onclick="mostrarRecuerdo()">
+⚠️ VER IMAGEN ⚠️
+</button>
+
+<div id="contenedorRecuerdo" style="display:none;">
+
+<img id="fotoRecuerdo" src="">
+
+<p id="mensajeRecuerdo"></p>
+
+</div>
+
 </div>
 
 <script>
@@ -324,6 +390,27 @@ const imagenes = {
 10:["imagenes/julio-10.jpg","imagenes/julio-1010.jfif","imagenes/julio-101010.jfif"]
 };
 
+let intentoFoto = 0;
+
+const recuerdos = [
+
+{
+imagen:"imagenes/Tangrowht2.webp",
+mensaje:"Upsss... nos equivocamos de imagen, era algo parecido.<br><br>Vuelva a intentarlo."
+},
+
+{
+imagen:"imagenes/IMG-20260701-WA0016~2.jpg",
+mensaje:"Bueno che...<br><br>Dijimos momentos buenos y malos, no solo malos...<br><br>Disculpen, posible programador con trisomía 23...<br><br>Intente nuevamente."
+},
+
+{
+imagen:"imagenes/IMG-20260701-WA0016~3.jpg",
+mensaje:"Ta pelao...<br><br>Ahora sí.<br><br>Espero nadie haya salido con los ojos cerrad... 🤬"
+}
+
+];
+
 function actualizar(){
     const ahora = new Date();
     const diferencia = fin - ahora;
@@ -335,16 +422,7 @@ function actualizar(){
         document.body.style.background="";
         document.body.classList.add("rgbFinal");
 
-        document.getElementById("panelJulio").style.display="block";
-
-        const contenedor = document.getElementById("imagenesJulio");
-        contenedor.innerHTML="";
-
-        imagenes[10].forEach(img=>{
-            const imagen=document.createElement("img");
-            imagen.src=img;
-            contenedor.appendChild(imagen);
-        });
+        document.getElementById("panelRecuerdos").style.display="block";
 
         let lluvia=setInterval(crearConfeti,250);
 
@@ -441,6 +519,36 @@ function crearConfeti(){
     c.remove();
 },3000);
 }
+
+    function mostrarRecuerdo(){
+
+const foto = document.getElementById("fotoRecuerdo");
+const mensaje = document.getElementById("mensajeRecuerdo");
+const contenedor = document.getElementById("contenedorRecuerdo");
+
+contenedor.style.display = "block";
+
+foto.src = recuerdos[intentoFoto].imagen;
+
+mensaje.innerHTML = recuerdos[intentoFoto].mensaje;
+
+foto.style.animation="none";
+mensaje.style.animation="none";
+
+void foto.offsetWidth;
+
+foto.style.animation="aparecer .4s";
+mensaje.style.animation="aparecer .4s";
+
+intentoFoto++;
+
+if(intentoFoto >= recuerdos.length){
+
+document.getElementById("btnFoto").style.display="none";
+
+}
+
+    }
 
 const fondos=[
 "linear-gradient(135deg,#1f2937,#374151,#111827)",
